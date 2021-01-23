@@ -1,9 +1,9 @@
-/* global Handlebars*/
+/* global Handlebars */
 
 export const select = {
   templateOf: {
     menuProduct: '#template-menu-product',
-    cartProduct: '#template-cart-product', // CODE ADDED
+    cartProduct: '#template-cart-product',
     bookingWidget: '#template-booking-widget',
   },
   containerOf: {
@@ -11,7 +11,6 @@ export const select = {
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
-    mainPage: '#main-page',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -28,7 +27,7 @@ export const select = {
   },
   widgets: {
     amount: {
-      input: 'input.amount', // CODE CHANGED
+      input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
@@ -40,9 +39,9 @@ export const select = {
       wrapper: '.hour-picker',
       input: 'input[type="range"]',
       output: '.output',
+      rangeSlider: '.rangeSlider',
     },
   },
-  // CODE ADDED START
   cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
@@ -65,6 +64,8 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    formSubmit: '.booking-form',
+    starters: '[name="starter"]',
   },
   nav: {
     links: '.main-nav a',
@@ -82,6 +83,10 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    choisedTable: 'choisedTable',
+    rangeSliderAvalible: 'rangeSlider__avalible',
+    rangeSlider2Avalible: 'rangeSlider__2avalible',
+    rangeSlider1Avalible: 'rangeSlider__1avalible',
   },
   nav: {
     active: 'active',
@@ -111,7 +116,7 @@ export const settings = {
     tableIdAttribute: 'data-table',
   },
   db: {
-    url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
+    url: '//' + window.location.hostname + (window.location.hostname === 'localhost' ? ':3131/api' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
@@ -125,8 +130,6 @@ export const settings = {
 
 export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-  // CODE ADDED START
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-  // CODE ADDED END
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
 };
